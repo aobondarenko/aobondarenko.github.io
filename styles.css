@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Tahoma', sans-serif;
+  background-image: url('background.jpg');
+  background-size: cover;
+  margin: 0;
+  padding: 0; 
+  color: #452d00;
+}
+
+.container  { /*parent container for all elements*/
+  max-width: 800px;
+  margin: 0 auto; 
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.title {
+  font-family: Cursive, sans-serif; 
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.controls, .button { /*for all controlls & buttons on page*/
+  flex: none; /*to avoid being stretched by flexible containers, the size is limited by the contents*/
+}
+
+.button { /*create new todo button*/
+  padding: 10px 20px; 
+  background-color: #452d00;
+  color: #f3edd1;
+  border: none;
+  cursor: pointer; 
+  border-radius: 5px;
+  transition: background-color 0.3s ease; 
+}
+
+.button:hover {
+  background-color: #634226; 
+}
+
+.todo-list { /*container with all todos*/
+  display: flex;
+  flex-wrap: wrap; /*elements are moved to a new line if they do not fit in the allotted space.*/
+  margin-top: 20px; 
+  padding: 20px; 
+  max-height: calc(100vh - 150px); /*max height of the task list, the height of the window (100vh) - 150 px. = scroll if the content of the task list takes up more space than available.*/
+  overflow-y: auto;/*vertical autoscroll*/
+}
+
+.todo-container { /*todo task container*/
+  width: calc(50% - 30px); /*50% the width of the parent container - 2 cont in a row*/
+  margin: 10px; 
+  padding: 20px; 
+  background-color: #e6ccb2;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease; 
+}
+
+.todo-container:hover {
+  background-color: #f3edd1; 
+}
+
+.todo-text {
+  width: calc(100% - 75px); /*text field width - button size and padding*/
+}
+
+.todo-delete { /* delete button styles*/
+  width: 50px;
+  background-color: #452d00;
+  color: #f3edd1; 
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  justify-content: center; /* Вирівнюємо текст по горизонталі по центру */
+  align-items: center; /* Вирівнюємо текст по вертикалі по центру */
+}
